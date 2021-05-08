@@ -1,16 +1,16 @@
-package wan.app.accountmanager.ui.slideshow;
+package wan.app.accountmanager.ui.calculator;
 
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.ViewModel;
 
-public class SlideshowViewModel extends ViewModel {
+public class CalculatorViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public SlideshowViewModel() {
+    public CalculatorViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is slideshow fragment");
+        mText.setValue("This is calculator fragment");
     }
 
     public LiveData<String> getText() {

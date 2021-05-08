@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.calculator.CalculatorFragment">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <LinearLayout
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:textColor="@color/font_color" android:textSize="@dimen/default_header_font_size"
+                android:text="물타기" />
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:stretchColumns="*">
+                <TableRow>
+                    <TextView
+                        android:padding="2dp"
+                        android:textColor="@color/font_color" android:textSize="@dimen/default_header_font_size"
+                        android:text="현재 보유" android:layout_span="3" android:gravity="center" />
+                </TableRow>
+                <TableRow>
+                    <EditText
+                        android:inputType="numberSigned|numberDecimal" android:hint="평균가"
+                        android:textColor="@color/font_color" android:textSize="@dimen/default_body_font_size" android:gravity="right|center_vertical"
+                        android:id="@+id/current_price" />
+                    <EditText
+                        android:inputType="number" android:hint="건수"
+                        android:textColor="@color/font_color" android:textSize="@dimen/default_body_font_size" android:gravity="right|center_vertical"
+                        android:id="@+id/current_cnt" />
+                    <TextView
+                        android:hint="총 매입가"
+                        android:textColor="@color/font_color" android:textSize="@dimen/default_body_font_size" android:gravity="right|center_vertical" android:paddingRight="10dp"
+                        android:id="@+id/current_total_price" />
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        android:padding="2dp" android:textColor="@color/font_color" android:textSize="@dimen/default_header_font_size"
+                        android:text="추가 매수" android:layout_span="3" android:gravity="center" />
+                </TableRow>
+                <TableRow>
+                    <EditText
+                        android:inputType="numberSigned|numberDecimal" android:hint="평균가"
+                        android:textColor="@color/font_color" android:textSize="@dimen/default_body_font_size" android:gravity="right|center_vertical"
+                        android:id="@+id/add_price" />
+                    <EditText
+                        android:inputType="number" android:hint="건수"
+                        android:textColor="@color/font_color" android:textSize="@dimen/default_body_font_size" android:gravity="right|center_vertical"
+                        android:id="@+id/add_cnt" />
+                    <TextView
+                        android:hint="총 매입가"
+                        android:textColor="@color/font_color" android:textSize="@dimen/default_body_font_size" android:gravity="right|center_vertical" android:paddingRight="10dp"
+                        android:id="@+id/add_total_price" />
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        android:padding="2dp" android:textColor="@color/font_color" android:textSize="@dimen/default_header_font_size"
+                        android:text="최종 보유" android:layout_span="3" android:gravity="center" />
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        android:hint="총 매입가"
+                        android:textColor="@color/font_color" android:textSize="@dimen/default_body_font_size" android:gravity="right|center_vertical"
+                        android:id="@+id/final_price" />
+                    <TextView
+                        android:hint="총 매입가"
+                        android:textColor="@color/font_color" android:textSize="@dimen/default_body_font_size" android:gravity="right|center_vertical"
+                        android:id="@+id/final_cnt" />
+                    <TextView
+                        android:hint="총 매입가"
+                        android:textColor="@color/font_color" android:textSize="@dimen/default_body_font_size" android:gravity="right|center_vertical" android:paddingRight="10dp"
+                        android:id="@+id/final_total_price" />
+                </TableRow>
+            </TableLayout>
+            <TableLayout android:id="@+id/average_total_table"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:stretchColumns="*" android:layout_marginTop="10dp">
+                <TableRow>
+                    <TextView
+                        android:padding="2dp" android:textColor="@color/font_color" android:textSize="@dimen/default_header_font_size"
+                        android:text="매수 종합" android:layout_span="4" android:gravity="center" />
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        android:text="수익률"
+                        android:textColor="@color/font_color" android:textSize="@dimen/default_subheader_font_size" />
+                    <TextView
+                        android:text="+10%" android:id="@+id/reulst_per" android:gravity="right|center_vertical" android:paddingRight="10dp"
+                        android:textColor="@color/font_color" android:textSize="@dimen/default_body_font_size" />
+                    <TextView
+                        android:text="수익금액"
+                        android:textColor="@color/font_color" android:textSize="@dimen/default_subheader_font_size" />
+                    <TextView
+                        android:text="4,000,000,000" android:id="@+id/result_price" android:gravity="right|center_vertical" android:paddingRight="10dp"
+                        android:textColor="@color/font_color" android:textSize="@dimen/default_body_font_size" />
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        android:text="주당 수익금"
+                        android:textColor="@color/font_color" android:textSize="@dimen/default_subheader_font_size" />
+                    <TextView android:layout_span="3"
+                        android:text="+1,000" android:id="@+id/result_price_per_share" android:gravity="right|center_vertical" android:paddingRight="10dp"
+                        android:textColor="@color/font_color" android:textSize="@dimen/default_body_font_size" />
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        android:text="추매 비중"
+                        android:textColor="@color/font_color" android:textSize="@dimen/default_subheader_font_size" />
+                    <TextView
+                        android:text="5%" android:id="@+id/result_add_per" android:gravity="right|center_vertical" android:paddingRight="10dp"
+                        android:textColor="@color/font_color" android:textSize="@dimen/default_body_font_size" />
+                    <TextView
+                        android:text="필요 상승률"
+                        android:textColor="@color/font_color" android:textSize="@dimen/default_subheader_font_size" />
+                    <TextView
+                        android:text="수익 중!!" android:id="@+id/result_principal_per" android:gravity="right|center_vertical" android:paddingRight="10dp"
+                        android:textColor="@color/font_color" android:textSize="@dimen/default_body_font_size" />
+                </TableRow>
+            </TableLayout>
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2px" android:background="@color/cardview_shadow_start_color" android:layout_margin="15dp" />
+        <LinearLayout
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:layout_marginTop="15dp">
+            <TextView
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:textColor="@color/font_color" android:textSize="@dimen/default_header_font_size"
+                android:text="백분율" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <EditText
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:textColor="@color/font_color" android:textSize="@dimen/default_body_font_size"
+                    android:inputType="numberSigned|numberDecimal" android:id="@+id/baek1_et1" android:gravity="right|center_vertical"
+                    android:hint="전체 값 예) 10,000"
+                     />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="이(가)" />
+                <EditText
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:textColor="@color/font_color" android:textSize="@dimen/default_body_font_size"
+                    android:inputType="numberSigned|numberDecimal" android:id="@+id/baek1_et2" android:gravity="right|center_vertical"
+                    android:hint="증감 값 예) 20,000"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" 으로 변하면?" />
+                <TextView
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:textColor="@color/font_color" android:textSize="@dimen/default_body_font_size"
+                    android:id="@+id/baek1_tv1" android:gravity="right|center_vertical" android:layout_gravity="right|center_vertical" android:paddingRight="10dp"
+                    android:hint="100%상승" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <EditText
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:textColor="@color/font_color" android:textSize="@dimen/default_body_font_size"
+                    android:inputType="numberSigned|numberDecimal" android:id="@+id/baek2_et1" android:gravity="right|center_vertical"
+                    android:hint="전체 값 예) 10,000"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="이(가)" />
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/font_color" android:textSize="@dimen/default_body_font_size"
+                    android:inputType="numberSigned|numberDecimal" android:id="@+id/baek2_et2" android:gravity="right|center_vertical"
+                    android:hint="증감 율 예) 100"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="% 증가 하면?" />
+                <TextView
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:textColor="@color/font_color" android:textSize="@dimen/default_body_font_size"
+                    android:id="@+id/baek2_tv1" android:gravity="right|center_vertical" android:layout_gravity="right|center_vertical" android:paddingRight="10dp"
+                    android:hint="20,000" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/font_color" android:textSize="@dimen/default_body_font_size"
+                    android:inputType="numberSigned|numberDecimal" android:id="@+id/baek3_et1" android:gravity="right|center_vertical"
+                    android:hint="전체 값 예) 10,000"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="이(가)" />
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/font_color" android:textSize="@dimen/default_body_font_size"
+                    android:inputType="numberSigned|numberDecimal" android:id="@+id/baek3_et2" android:gravity="right|center_vertical"
+                    android:hint="증감 율 예) 50"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="% 감소 하면?" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/font_color" android:textSize="@dimen/default_body_font_size"
+                    android:id="@+id/baek3_tv1" android:gravity="right|center_vertical" android:layout_gravity="right|center_vertical" android:paddingRight="10dp"
+                    android:hint="5,000" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/font_color" android:textSize="@dimen/default_body_font_size"
+                    android:inputType="numberSigned|numberDecimal" android:id="@+id/baek4_et1" android:gravity="right|center_vertical"
+                    android:hint="전체 값 예) 10,000"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="의" />
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/font_color" android:textSize="@dimen/default_body_font_size"
+                    android:inputType="numberSigned|numberDecimal" android:id="@+id/baek4_et2" android:gravity="right|center_vertical"
+                    android:hint="일부값 예) 1,000"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="은 몇 %?" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/font_color" android:textSize="@dimen/default_body_font_size"
+                    android:id="@+id/baek4_tv1" android:gravity="right|center_vertical" android:layout_gravity="right|center_vertical" android:paddingRight="10dp"
+                    android:hint="10%" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/font_color" android:textSize="@dimen/default_body_font_size"
+                    android:inputType="numberSigned|numberDecimal" android:id="@+id/baek5_et1" android:gravity="right|center_vertical"
+                    android:hint="전체 값 예) 10,000"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="의" />
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/font_color" android:textSize="@dimen/default_body_font_size"
+                    android:inputType="numberSigned|numberDecimal" android:id="@+id/baek5_et2" android:gravity="right|center_vertical"
+                    android:hint="비율값 예) 10%"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="%는 얼마?" />
+                <TextView
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:textColor="@color/font_color" android:textSize="@dimen/default_body_font_size"
+                    android:id="@+id/baek5_tv1" android:gravity="right|center_vertical" android:layout_gravity="right|center_vertical" android:paddingRight="10dp"
+                    android:hint="1,000" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>
