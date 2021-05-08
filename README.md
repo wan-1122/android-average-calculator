@@ -38,7 +38,7 @@ push, analytics 등등: firebase !!
 
 ## 추후 일정
 
-android commit 없음(just portfolio)
+android commit 없음(just portfolio, 맛보기만)
 
 ios(swift) convert
 
